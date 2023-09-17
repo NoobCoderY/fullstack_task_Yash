@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 export interface Todo {
   todo: string;
-  createdAt?: Date;
-  updatedAt?: Date;
+  createdAt?: number;
+  
 }
 
 const TodoSchema = new mongoose.Schema<Todo>({
@@ -12,13 +12,9 @@ const TodoSchema = new mongoose.Schema<Todo>({
     required: true,
   },
   createdAt: {
-    type: Date,
-    default: Date.now,
+    type:Number,
   },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
+ 
 });
 
 export default mongoose.model("assignment_yash", TodoSchema);
